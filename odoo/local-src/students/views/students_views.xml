@@ -17,6 +17,16 @@
                             <field name="lastname"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Marks" name="mark">
+                            <field name="marks_ids">
+                                <tree editable="bottom">
+                                    <field name="subject"/>
+                                    <field name="mark"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -30,7 +40,8 @@
             <tree string="Students">
                 <field name="firstname"/>
                 <field name="lastname"/>
-                <field name="training_id" />
+                <field name="training_id"/>
+                <field name="marks_ids"/>
             </tree>
         </field>
     </record>

@@ -14,6 +14,7 @@ class StudentsTraining(models.Model):
 class StudentsStudent(models.Model):
     _name = "students.student"
     _description = "Student table"
+    _rec_name = "number"
 
     number = fields.Char("Student number", size=11, required=True)
     firstname = fields.Char("Student firstname", size=64, required=True)
@@ -22,4 +23,22 @@ class StudentsStudent(models.Model):
         string="Training",
         comodel_name="students.training",
         ondelete="cascade",
+    )
+    marks_ids = fields.One2many(
+        string="Mark student",
+        comodel_name="students.mark",
+        inverse_name="student_id",
+    )
+
+class StudentsMark(models.Model):
+    _name = "students.mark"
+    _description = "Mark table"
+
+    subject = fields.Char("Mark subject", required=True)
+    mark = fields.Float("Mark",required=True)
+    student_id = fields.Many2one(
+        string="students",
+        comodel_name="students.student",
+        ondelete="cascade",
+        required=True,
     )

@@ -1,0 +1,22 @@
+<odoo>
+    <record id="students.mark_1" model="students.mark">
+        <field name="subject">ERP</field>
+        <field name="mark">15.50</field>
+        <field name="student_id" ref="student_1"/>
+    </record>
+    <record id="students.mark_2" model="students.mark">
+        <field name="subject">Prog C#</field>
+        <field name="mark">10.00</field>
+        <field name="student_id" ref="student_2"/>
+    </record>
+    <record id="students.mark_3" model="students.mark">
+        <field name="subject">ERP</field>
+        <field name="mark">0.00</field>
+        <field name="student_id" ref="student_2"/>
+    </record>
+    <record id="students.mark_4" model="students.mark">
+        <field name="subject">ERP</field>
+        <field name="mark">14.00</field>
+        <field name="student_id" ref="student_3"/>
+    </record>
+</odoo>
