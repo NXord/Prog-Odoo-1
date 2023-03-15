@@ -36,6 +36,7 @@ class StudentsMark(models.Model):
 
     subject = fields.Char("Mark subject", required=True)
     mark = fields.Float("Mark",required=True)
+    coefficient = fields.Selection
     student_id = fields.Many2one(
         string="students",
         comodel_name="students.student",
