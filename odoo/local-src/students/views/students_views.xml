@@ -16,6 +16,9 @@
                             <field name="firstname"/>
                             <field name="lastname"/>
                         </group>
+                        <group>
+                            <field name="average"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Marks" name="mark">
@@ -23,6 +26,8 @@
                                 <tree editable="bottom">
                                     <field name="subject"/>
                                     <field name="mark"/>
+                                    <field name="coefficient"/>
+                                    <field name="weighted"/>
                                 </tree>
                             </field>
                         </page>
@@ -40,6 +45,7 @@
             <tree string="Students">
                 <field name="firstname"/>
                 <field name="lastname"/>
+                <field name="average"/>
                 <field name="training_id"/>
                 <field name="marks_ids"/>
             </tree>
