@@ -10,6 +10,8 @@
                     <group>
                         <field name="subject"/>
                         <field name="mark"/>
+                        <field name="coefficient"/>
+                        <field name="weighted"/>
                         <field name="student_id"/>
                     </group>
                 </sheet>
@@ -25,6 +27,8 @@
             <tree string="Mark">
                 <field name="subject"/>
                 <field name="mark"/>
+                <field name="coefficient"/>
+                <field name="weighted"/>
                 <field name="student_id"/>
             </tree>
         </field>

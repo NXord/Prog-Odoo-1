@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import models, fields, api
 class StudentsTraining(models.Model):
     _name = "students.training"
     _description = "Training table"
@@ -36,10 +36,17 @@ class StudentsMark(models.Model):
 
     subject = fields.Char("Mark subject", required=True)
     mark = fields.Float("Mark",required=True)
-    coefficient = fields.Selection
+    coefficient = fields.Selection(string = "Mark coef",selection = [('1', "1" ),('2', "2"),('3',"3"),('4',"4"),('5',"5")],required=True)
+    weighted = fields.Float("Weighted Mark", compute='compute_weighted')
     student_id = fields.Many2one(
         string="students",
         comodel_name="students.student",
         ondelete="cascade",
         required=True,
     )
+
+    @api.onchange('coefficient','mark')
+    def compute_weighted(self):
+        for record in self:
+            coefFloat=float(record.coefficient)
+            record.weighted = coefFloat*record.mark
