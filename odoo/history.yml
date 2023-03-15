@@ -1,8 +1,0 @@
-history:
-  versions:
-    - version: setup
-      features:
-        - code: "initial"
-          summary: "Initial Setup"
-          detail: |
-            Install of the following modules: ....
