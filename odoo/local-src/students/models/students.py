@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 class StudentsTraining(models.Model):
     _name = "students.training"
     _description = "Training table"
@@ -72,3 +72,9 @@ class StudentsMark(models.Model):
         for record in self:
             coefFloat=float(record.coefficient)
             record.weighted = coefFloat*record.mark
+
+    @api.constrains('mark')
+    def _check_mark(self):
+        for record in self:
+            if record.mark<0 or record.mark>20:
+                raise exceptions.ValidationError("The mark must be between 0 and 20")
